@@ -20,9 +20,6 @@ const byte MAX_ROWS=2;
 const int pinSDA = 14;
 const int pinSCL = 15;
 
-// Vars - no utilizadas por ahora
-//int delayTime = 0;
-
 // LCD
 LiquidCrystal_I2C lcd(0x27,MAX_CHARS, MAX_ROWS);
 
@@ -196,32 +193,10 @@ void loop() {
     postImage();
     lcd.setCursor(0, 1);
     lcd.print("Imagen tomada");
-    //delayTime = delayTime + 5000; //suma 5 segundos para evitar reenvio de imagenes tan seguidas
-    //envia espera 5
-    //envia espera 10
-    //envia espera 15
-    //envia espera 20
-    //envia espera 25
-    //luego del minuto y 15 segundos (5 envios), reinicia el contador y vuelve a enviar con la frecuencia inical
-  }else{
-    //delayTime = 0;
-    //lcd.clear();
-    //lcd.setCursor(0, 0);
-    //lcd.print("No se detecta");
-    //lcd.setCursor(0, 1);
-    //lcd.print("Objeto");
-    //si no detecta nada no hay delay, genera que siempre este midiendo la distancia
   }
   delay(1000); //para ver msj de imagen capturada y no tomar tantas distancias seguidas
   lcd.clear();
   lcd.setCursor(0, 0);
   lcd.print("Detectando...");
 
-  //if (delayTime>=60000){
-  //  delayTime = 0;
-  //}
-
-  //Serial.println(delayTime);
-  //delay(2000);
-  //delay(delayTime); //la logica del delay no se utiliza por ahora, ya que de por si el envio de imagenes es entre 10 y 20 segundos
 }
